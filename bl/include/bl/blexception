@@ -1,0 +1,35 @@
+#ifndef _$_blexception_bl
+#define _$_blexception_bl
+#include<iostream>
+#include<string>
+#include<map>
+using namespace std;
+namespace inventory
+{
+namespace buissness_layer
+{
+class BLException : public exception
+{
+private:
+string genericException;
+map<string,string> exceptions;
+public:
+BLException( );
+BLException(string message);
+BLException(const BLException &other);
+BLException & operator=(const BLException &other);
+virtual ~BLException( ) throw( );
+const char* what( ) const throw( );
+void setBLException(string);
+string getBLException( );
+void addPropertyException(string , string);
+string getPropertyException(string);
+int hasPropertyException(string);
+int hasGenericException( );
+int hasPropertyExceptions( );
+int hasException( );
+int getPropertyExceptionsCount( );
+};
+}
+}
+#endif

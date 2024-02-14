@@ -1,0 +1,31 @@
+#ifndef _$_iuom_bl
+#define _$_iuom_bl
+#include<iostream>
+
+using namespace std;
+
+namespace inventory
+{
+namespace buissness_layer
+{
+namespace abc
+{
+class IUnitOfMeasurment
+{
+public:
+virtual void setCode(int)=0;
+virtual int getCode( )const=0;
+virtual void setTitle(string)=0;
+virtual string getTitle( )const=0;
+virtual IUnitOfMeasurment & operator=(const IUnitOfMeasurment &)=0;
+virtual int operator==(const IUnitOfMeasurment &)=0;
+virtual int operator!=(const IUnitOfMeasurment &)=0;
+virtual int operator<=(const IUnitOfMeasurment &)=0;
+virtual int operator>=(const IUnitOfMeasurment &)=0;
+virtual int operator<(const IUnitOfMeasurment &)=0;
+virtual int operator>(const IUnitOfMeasurment &)=0;
+};
+}
+}
+}
+#endif

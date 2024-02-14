@@ -1,0 +1,33 @@
+#ifndef _$_iuommanager_bl
+#define _$_iuommanager_bl
+
+#include<iostream>
+#include<bl/iuom>
+#include<bl/uom>
+#include<bl/blexception>
+#include<forward_list>
+
+namespace inventory
+{
+namespace buissness_layer
+{
+namespace abc
+{
+class IUnitOfMeasurmentManager
+{
+public:
+virtual void addUnitOfMeasurment(IUnitOfMeasurment *unitOfMeasurment) throw(BLException)=0;
+virtual void updateUnitOfMeasurment(IUnitOfMeasurment *unitOfMeasurment) throw(BLException)=0;
+virtual void removeUnitOfMeasurment(IUnitOfMeasurment *unitOfMeasurment) throw(BLException)=0;
+virtual IUnitOfMeasurment* getUnitOfMeasurmentByCode(int code) throw(BLException)=0;
+virtual IUnitOfMeasurment* getUnitOfMeasurmentByTitle(string title) throw(BLException)=0;
+virtual forward_list<IUnitOfMeasurment *> * getAllUnitOfMeasurments( ) throw(BLException)=0;
+virtual int unitOfMeasurmentCodeExists(int code) throw(BLException)=0;
+virtual int unitOfMeasurmentTitleExists(string title) throw(BLException)=0;
+virtual int getUnitOfMeasurmentCount( ) throw(BLException)=0;
+};
+}
+}
+}
+
+#endif
